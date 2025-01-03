@@ -1,0 +1,21 @@
+# lefthook.yml
+
+pre-commit:
+  only:
+    - ref: dev/*
+  commands:
+    lint:
+      run: bun run check --fix
+      glob: "*.{ts,js,tsx,jsx}"
+    test:
+      run: bun run test
+
+pre-push:
+  commands:
+    test:
+      run: bun run test
+      skip: true
+    lint:
+      run: bun run check
+      only:
+        - ref: main
