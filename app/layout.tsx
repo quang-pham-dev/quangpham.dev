@@ -3,7 +3,6 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import Script from "next/script"
-import { Monitoring } from "react-scan/monitoring/next"
 
 import { ThemeProvider } from "@/components/theme-provider"
 import { siteConfig } from "@/config/site"
@@ -88,10 +87,6 @@ export default function RootLayout({
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				<Monitoring
-					apiKey={process.env.NEXT_MONITORING_API_KEY || ""}
-					url={process.env.NEXT_MONITORING_URL}
-				/>
 				{/* https://vercel.com/docs/analytics/package */}
 				<Analytics />
 				<SpeedInsights />
