@@ -17,7 +17,7 @@ export function ScrollToTopButton() {
 					animate={{ opacity: 1, y: 0 }}
 					exit={{ opacity: 0, y: 20 }}
 					onClick={scrollToTop}
-					className="fixed bottom-8 right-8 p-2 rounded-full bg-secondary text-white shadow-lg"
+					className="fixed bottom-8 right-8 p-2 rounded-full bg-primary text-white shadow-lg"
 					aria-label="Scroll to Top"
 				>
 					<MoveUp />

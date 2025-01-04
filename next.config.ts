@@ -23,6 +23,13 @@ const nextConfig: NextConfig = {
   experimental: {
     // This will add the correct 'as' attribute to preloaded resources
     optimizePackageImports: ["@components"],
+    // Add these optimizations
+    serverActions: {
+      allowedOrigins: [
+        "https://quangpham.dev",
+        "https://quangpham-dev.vercel.app",
+      ],
+    },
   },
   async headers() {
     return [
