@@ -7,8 +7,8 @@ import { Button } from "@/components/ui/button"
 const GlobalError = ({ reset }: { reset: () => void }) => {
 	return (
 		<>
-			<h1>{t("greeting")}</h1>
-			<Button onClick={reset}>{t("tryAgain")}</Button>
+			<h1>{t("errors.somethingWrong")}</h1>
+			<Button onClick={reset}>{t("errors.tryAgain")}</Button>
 		</>
 	)
 }
