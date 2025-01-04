@@ -62,7 +62,8 @@
 				"rules": {
 					"suspicious": {
 						"noExplicitAny": "off",
-						"noArrayIndexKey": "warn"
+						"noArrayIndexKey": "warn",
+						"noAssignInExpressions": "off"
 					}
 				}
 			}
