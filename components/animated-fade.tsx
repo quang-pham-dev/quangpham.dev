@@ -1,7 +1,7 @@
 "use client"
 
 import { type Variant, motion, useReducedMotion } from "framer-motion"
-import { memo, useMemo, type ReactNode } from "react"
+import { type ReactNode, memo, useMemo } from "react"
 
 type Direction = "up" | "down" | "left" | "right"
 

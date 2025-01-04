@@ -21,12 +21,38 @@ const geistMono = Geist_Mono({
 
 const { author, site } = siteConfig
 
-const { title, description: siteDescription, url } = site
+const { title, description: siteDescription } = site
+
+export const viewport = {
+	width: "device-width",
+	initialScale: 1,
+	maximumScale: 5,
+}
 
 export const metadata: Metadata = {
-	title,
+	metadataBase: new URL("https://quangpham.dev"),
+	title: {
+		default: title,
+		template: `%s | ${title}`,
+	},
 	description: siteDescription,
-	authors: [{ name: author.name, url: "https://quangpham.dev" }],
+	authors: [
+		{
+			name: author.name,
+			url: site.url,
+		},
+	],
+	generator: "Next.js",
+	applicationName: title,
+	referrer: "origin-when-cross-origin",
+	keywords: site.keywords,
+	creator: author.name,
+	publisher: author.name,
+	formatDetection: {
+		email: false,
+		address: false,
+		telephone: false,
+	},
 	robots: {
 		index: true,
 		follow: true,
@@ -39,24 +65,55 @@ export const metadata: Metadata = {
 		},
 	},
 	icons: {
-		apple: "/favicon.ico",
+		icon: { url: "/icon.png", type: "image/png" },
 	},
+	manifest: "/manifest.json",
 	openGraph: {
+		type: "website",
+		locale: "en_US",
+		url: site.url,
 		title,
 		description: siteDescription,
-		images: ["/og-image.png"],
-		locale: "en_US",
-		type: "website",
-		url,
+		siteName: title,
+		images: [
+			{
+				url: "/og-image.png",
+				width: 1200,
+				height: 630,
+				alt: title,
+			},
+		],
 	},
 	twitter: {
 		card: "summary_large_image",
 		title,
 		description: siteDescription,
-		images: ["/og-image.png"],
-		creator: "@quangpham_dev",
+		site: author.twitter,
+		creator: author.twitter,
+		images: [
+			{
+				url: "/og-image.png",
+				width: 1200,
+				height: 630,
+				alt: title,
+			},
+		],
 	},
-	keywords: ["quangpham.dev", "quangpham", "quangpn"],
+	verification: {
+		google: "your-google-site-verification",
+		yandex: "your-yandex-verification",
+		other: {
+			"norton-safeweb-site-verification": "your-norton-verification",
+		},
+	},
+	alternates: {
+		canonical: site.alternates.canonical,
+		languages: {
+			"en-US": "/en-US",
+			"vi-VN": "/vi-VN",
+		},
+	},
+	category: "technology",
 }
 
 export default function RootLayout({

@@ -17,7 +17,7 @@ const SOCIAL_INFORMATION = [
 				duration: 0.6,
 			},
 			className:
-				"flex items-center justify-center gap-2 p-2 rounded-lg bg-blue-700 text-white hover:bg-blue-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 transition-colors",
+				"flex items-center justify-center gap-2 p-2 rounded-lg bg-blue-700 text-white hover:bg-blue-800 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 transition-colors font-semibold",
 		},
 	},
 	{
@@ -31,7 +31,7 @@ const SOCIAL_INFORMATION = [
 				duration: 0.6,
 			},
 			className:
-				"flex items-center justify-center gap-2 p-2 rounded-lg bg-blue-500 text-white hover:bg-blue-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 transition-colors",
+				"flex items-center justify-center gap-2 p-2 rounded-lg bg-red-500 text-white hover:bg-red-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400 focus-visible:ring-offset-2 transition-colors font-semibold",
 		},
 	},
 	{
@@ -45,7 +45,7 @@ const SOCIAL_INFORMATION = [
 				duration: 0.6,
 			},
 			className:
-				"flex items-center justify-center gap-2 p-2 rounded-lg bg-gray-800 text-white hover:bg-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2 transition-colors",
+				"flex items-center justify-center gap-2 p-2 rounded-lg bg-gray-800 text-white hover:bg-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gray-500 focus-visible:ring-offset-2 transition-colors font-semibold",
 		},
 	},
 ] as const
