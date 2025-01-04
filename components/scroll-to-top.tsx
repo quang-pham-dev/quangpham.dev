@@ -4,13 +4,14 @@ import { AnimatePresence, motion } from "framer-motion"
 import { MoveUp } from "lucide-react"
 
 import { useScrollToTop } from "@/hooks"
+import RenderWith from "@/lib/render-with"
 
 export function ScrollToTopButton() {
 	const { isVisible, scrollToTop } = useScrollToTop()
 
 	return (
 		<AnimatePresence>
-			{isVisible && (
+			<RenderWith isTrue={isVisible}>
 				<motion.button
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
@@ -21,7 +22,7 @@ export function ScrollToTopButton() {
 				>
 					<MoveUp />
 				</motion.button>
-			)}
+			</RenderWith>
 		</AnimatePresence>
 	)
 }

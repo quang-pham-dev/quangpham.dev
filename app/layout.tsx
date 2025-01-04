@@ -68,10 +68,11 @@ export default function RootLayout({
 			<head>
 				{/* https://tagmanager.google.com/#/container/accounts/6247383213/containers/194151229/workspaces/2 */}
 				<Script
+					strategy="afterInteractive"
 					async
 					src="https://www.googletagmanager.com/gtag/js?id=GTM-WSZPF43V"
 				/>
-				<Script id="google-analytics">
+				<Script id="google-analytics" strategy="afterInteractive">
 					{`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -88,7 +89,8 @@ export default function RootLayout({
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
 				{/* https://vercel.com/docs/analytics/package */}
-				<Analytics />
+				{/* Load analytics after page load */}
+				<Analytics mode="auto" />
 				<SpeedInsights />
 				<ThemeProvider>{children}</ThemeProvider>
 			</body>

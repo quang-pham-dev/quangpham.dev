@@ -24,7 +24,6 @@ My personal portfolio website built with Next.js and TypeScript, featuring a bea
 
 - Vercel Analytics
 - Vercel Speed Insights
-- React Scan 0.0.54
 
 ### Development Tools
 
