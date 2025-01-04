@@ -2,6 +2,7 @@ import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
 	reactStrictMode: true,
+	// Optimize images
 	images: {
 		minimumCacheTTL: 60,
 		remotePatterns: [
@@ -14,12 +15,15 @@ const nextConfig: NextConfig = {
 		deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
 		imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
 	},
+	// Optimize JavaScript
 	compiler: {
 		removeConsole: process.env.NODE_ENV === "production",
 	},
+	// Enable experimental features
 	experimental: {
 		// This will add the correct 'as' attribute to preloaded resources
 		optimizePackageImports: ["@components"],
+		optimizeCss: true,
 	},
 	async headers() {
 		return [
