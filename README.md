@@ -44,8 +44,8 @@ My personal portfolio website built with Next.js and TypeScript, featuring a bea
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/quang-pham-dev/portfolio.git
-cd portfolio
+git clone https://github.com/quang-pham-dev/quangpham.dev
+cd quangpham.dev
 ```
 
 2. Install dependencies:
@@ -84,7 +84,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 - `bun test:coverage` - Generate test coverage
 - `bun e2e` - Run Playwright E2E tests
 - `bun e2e:ui` - Run Playwright tests with UI
-- `bun lint` - Run ESLint
 - `bun check` - Run Biome checks
 - `bun check:fix` - Fix Biome issues
 - `bun check:unused` - Check for unused exports
@@ -119,7 +118,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Author
 
-Quang Pham ([@quangpham_dev](https://twitter.com/quangpham_dev))
+Quang Pham ([@quang-pham-dev](https://www.linkedin.com/in/quang-pham-dev/))
 
 ## License
 
