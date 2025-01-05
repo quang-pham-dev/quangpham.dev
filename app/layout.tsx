@@ -63,11 +63,23 @@ export const metadata: Metadata = {
 			"max-image-preview": "large",
 			"max-snippet": -1,
 		},
+		notranslate: true,
 	},
 	icons: {
-		icon: { url: "/icon.png", type: "image/png" },
+		icon: [
+			{ url: "/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+			{ url: "/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+			{ url: "/favicon/favicon.ico", type: "image/x-icon" },
+		],
+		apple: [
+			{
+				url: "/favicon/apple-touch-icon.png",
+				sizes: "180x180",
+				type: "image/png",
+			},
+		],
 	},
-	manifest: "/manifest.json",
+	manifest: "/site.webmanifest",
 	openGraph: {
 		type: "website",
 		locale: "en_US",
@@ -81,6 +93,8 @@ export const metadata: Metadata = {
 				width: 1200,
 				height: 630,
 				alt: title,
+				type: "image/png",
+				secureUrl: `${site.url}/og-image.png`,
 			},
 		],
 	},
@@ -96,24 +110,16 @@ export const metadata: Metadata = {
 				width: 1200,
 				height: 630,
 				alt: title,
+				type: "image/png",
 			},
 		],
 	},
-	verification: {
-		google: "your-google-site-verification",
-		yandex: "your-yandex-verification",
-		other: {
-			"norton-safeweb-site-verification": "your-norton-verification",
-		},
-	},
-	alternates: {
-		canonical: site.alternates.canonical,
-		languages: {
-			"en-US": "/en-US",
-			"vi-VN": "/vi-VN",
-		},
-	},
+
 	category: "technology",
+	other: {
+		"msapplication-TileColor": "#000000",
+		"theme-color": "#000000",
+	},
 }
 
 export default function RootLayout({
