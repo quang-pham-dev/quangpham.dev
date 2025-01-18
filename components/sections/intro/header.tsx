@@ -8,7 +8,7 @@ export default function Header() {
 		<AnimatedFade direction="left" delay={0.4}>
 			<h1 className="text-5xl font-bold text-start">
 				{t("greeting")} <br />
-				{t("intro")}!
+				{t("intro")}
 			</h1>
 		</AnimatedFade>
 	)
