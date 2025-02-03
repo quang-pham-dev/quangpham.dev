@@ -2,7 +2,6 @@ import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
-import Script from "next/script"
 
 import { TranslationProvider } from "@/components/i18next-provider"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -130,20 +129,6 @@ export default function RootLayout({
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<head>
-				{/* https://tagmanager.google.com/#/container/accounts/6247383213/containers/194151229/workspaces/2 */}
-				<Script
-					strategy="afterInteractive"
-					async
-					src="https://www.googletagmanager.com/gtag/js?id=GTM-WSZPF43V"
-				/>
-				<Script id="google-analytics" strategy="afterInteractive">
-					{`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'GTM-WSZPF43V');
-          `}
-				</Script>
 				<meta
 					name="viewport"
 					content="width=device-width, initial-scale=1.0, viewport-fit=cover"
