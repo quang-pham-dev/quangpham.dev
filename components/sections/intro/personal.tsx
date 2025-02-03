@@ -22,14 +22,14 @@ export default function Personal() {
 						Restful Mind
 					</Link>
 				</span>
-				<Link
+				<a
 					className="flex items-center underline font-semibold"
 					href="/resume.pdf"
 					target="_blank"
 					rel="noopener noreferrer"
 				>
 					{t("viewResume")} <ArrowUpRightIcon className="ml-2 size-5" />
-				</Link>
+				</a>
 			</div>
 		</AnimatedFade>
 	)
