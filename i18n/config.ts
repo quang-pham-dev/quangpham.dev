@@ -22,9 +22,7 @@ const resources: Record<string, { common: Translations["common"] }> = {
       greeting: "Hey 👋,",
       intro: "I'm Quang Pham!",
       description:
-        `Knowledgeable Software Engineer with over 9 years of experience in cutting-edge web technology development,
-         Experienced in optimizing the performance, user interface(UI), and user experience(UX) for web and mobile platforms.
-         `,
+        "Senior Software Engineer with over 9 years of experience in cutting-edge web technology development, specializing in performance optimization, UI/UX, and scalable architecture. Experienced in leading technical teams, ensuring code quality, and mentoring developers to enhance team efficiency.",
       position: "Senior Software Engineer at",
       viewResume: "View Resume",
       connect: {
@@ -61,9 +59,7 @@ const resources: Record<string, { common: Translations["common"] }> = {
       greeting: "Xin chào 👋,",
       intro: "Tôi là Quang Phạm!",
       description:
-        `Kỹ sư phần mềm giàu kiến thức với hơn 9 năm kinh nghiệm trong phát triển công nghệ web tiên tiến
-        Có kinh nghiệm trong việc tối ưu hóa hiệu suất, giao diện người dùng (UI) và trải nghiệm người dùng (UX) cho các nền tảng web và di động.
-         `,
+        "Kỹ sư phần mềm cấp cao với hơn 9 năm kinh nghiệm trong phát triển công nghệ web tiên tiến, chuyên về tối ưu hóa hiệu suất, UI/UX và kiến trúc có khả năng mở rộng. Có kinh nghiệm dẫn dắt nhóm kỹ thuật, đảm bảo chất lượng mã nguồn và hướng dẫn các nhà phát triển để nâng cao hiệu suất làm việc của đội nhóm.",
       position: "Kỹ sư phần mềm cao cấp tại",
       viewResume: "Xem CV",
       connect: {
@@ -100,10 +96,7 @@ const resources: Record<string, { common: Translations["common"] }> = {
       greeting: "こんにちは 👋,",
       intro: "クアン・ファムです!",
       description:
-        `
-        最先端のWeb技術開発において9年以上の経験を持つ、豊富な知識を備えたソフトウェアエンジニア。
-        Webおよびモバイルプラットフォーム向けのパフォーマンス、ユーザーインターフェース（UI）、ユーザーエクスペリエンス（UX）の最適化に豊富な経験を持つ。
-        `,
+        "最先端のWeb技術開発において9年以上の経験を持つシニアソフトウェアエンジニア。パフォーマンス最適化、UI/UX、スケーラブルなアーキテクチャに特化。技術チームのリーダー経験があり、コード品質の確保や開発者の指導を通じて、チームの効率向上に貢献。",
       position: "シニアソフトウェアエンジニア @",
       viewResume: "履歴書を見る",
       connect: {
