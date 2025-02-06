@@ -12,7 +12,7 @@ export default function Home() {
 			<main className="flex flex-col min-h-dvh text-foreground">
 				<Header />
 				<section className="flex-1 flex flex-col items-center justify-center p-6 sm:p-8">
-					<div className="max-w-md mx-auto">
+					<div className="max-w-[35rem] mx-auto">
 						<Intro />
 						<Information />
 					</div>
