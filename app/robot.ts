@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/constants"
 import type { MetadataRoute } from "next"
 
 export default function robots(): MetadataRoute.Robots {
@@ -7,7 +8,7 @@ export default function robots(): MetadataRoute.Robots {
 			allow: "/",
 			disallow: ["/private/", "/api/"],
 		},
-		sitemap: "https://quangpham.dev/sitemap.xml",
-		host: "https://quangpham.dev",
+		sitemap: `${SITE_URL.dev}/sitemap.xml`,
+		host: SITE_URL.dev,
 	}
 }

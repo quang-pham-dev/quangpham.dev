@@ -6,6 +6,7 @@ import { Geist, Geist_Mono } from "next/font/google"
 import { TranslationProvider } from "@/components/i18next-provider"
 import { ThemeProvider } from "@/components/theme-provider"
 import { siteConfig } from "@/config/site"
+import { SITE_URL } from "@/constants"
 import "./globals.css"
 
 const geistSans = Geist({
@@ -29,7 +30,7 @@ export const viewport = {
 }
 
 export const metadata: Metadata = {
-	metadataBase: new URL("https://quangpham.dev"),
+	metadataBase: new URL(SITE_URL.dev),
 	title: {
 		default: title,
 		template: `%s | ${title}`,

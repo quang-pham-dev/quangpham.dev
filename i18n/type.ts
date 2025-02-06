@@ -11,7 +11,9 @@ export interface Translations {
 		intro: string
 		description: string
 		position: string
-		viewResume: string
+		myResume: string
+		myProjects: string
+		myBlogs: string
 		connect: {
 			linkedin: string
 			twitter: string
