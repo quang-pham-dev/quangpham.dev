@@ -7,6 +7,8 @@ import { useTranslations } from "@/hooks/use-translation"
 
 const projectsUrl = "https://projects.quangpham.dev"
 const blogsUrl = "https://blogs.quangpham.dev"
+const resumeUrl =
+	"https://drive.google.com/file/d/1iENqZzAUHFqjaBsGjQ1Tj9c5UxlQFtPx/view"
 
 export default function Personal() {
 	const { t } = useTranslations()
@@ -32,7 +34,7 @@ export default function Personal() {
 						<CardContent className="px-1 py-2 flex items-center justify-center h-full">
 							<a
 								className="flex items-center underline font-semibold"
-								href="/resume.pdf"
+								href={resumeUrl}
 								target="_blank"
 								rel="noopener noreferrer"
 							>
