@@ -6,7 +6,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { useTranslations } from "@/hooks/use-translation"
 
 const projectsUrl = "https://projects.quangpham.dev"
-const blogsUrl = "https://blogs.quangpham.dev"
+const blogUrl = "https://blog.quangpham.dev"
 const resumeUrl =
 	"https://drive.google.com/file/d/1iENqZzAUHFqjaBsGjQ1Tj9c5UxlQFtPx/view"
 
@@ -60,7 +60,7 @@ export default function Personal() {
 						<CardContent className="px-1 py-2 flex items-center justify-center h-full">
 							<a
 								className="flex items-center underline font-semibold"
-								href={blogsUrl}
+								href={blogUrl}
 								target="_blank"
 								rel="noopener noreferrer"
 							>
