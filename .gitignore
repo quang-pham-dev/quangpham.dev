@@ -43,3 +43,7 @@ next-env.d.ts
 # test
 /html
 /test-results
+
+# lighthouse reports
+/lighthouse-reports
+*.report.html
