@@ -28,8 +28,8 @@
 		"build-storybook": "storybook build",
 		"pre-commit-lint": "bun run lint-staged",
 		"analyze": "ANALYZE=true next build",
-		"lighthouse": "lighthouse http://localhost:3000 --view",
-		"test-perf": "npm run build && npm run start && npm run lighthouse"
+		"lighthouse": "mkdir -p lighthouse-reports && lighthouse http://localhost:3000 --output html --output-path ./lighthouse-reports/report-$(date +%Y%m%d-%H%M%S).html --view",
+		"test-perf": "bun run build && bun run start && bun run lighthouse"
 	},
 	"dependencies": {
 		"@radix-ui/react-dropdown-menu": "^2.1.4",
