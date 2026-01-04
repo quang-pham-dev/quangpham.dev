@@ -6,7 +6,7 @@ import type { Translations } from "./type"
 
 export const defaultNS = "common"
 export const fallbackLng = "en"
-export const yearsOfExperience = 10
+export const yearsOfExperience = 11
 
 const resources: Record<string, { common: Translations["common"] }> = {
 	en: {
@@ -29,7 +29,7 @@ const resources: Record<string, { common: Translations["common"] }> = {
 			myBlog: "My Blog",
 			// New hero section keys
 			availableForWork: "Available for new opportunities",
-			role: "Senior Engineer",
+			role: "Senior Software Engineer",
 			heroDescriptionPart1: `${yearsOfExperience}+ years crafting`,
 			heroDescriptionHighlight: "high-performance web applications",
 			heroDescriptionPart2:
@@ -81,7 +81,7 @@ const resources: Record<string, { common: Translations["common"] }> = {
 			myBlog: "My Blog",
 			// New hero section keys
 			availableForWork: "Sẵn sàng cho cơ hội mới",
-			role: "Kỹ sư cao cấp",
+			role: "Kỹ sư phần mềm cao cấp",
 			heroDescriptionPart1: `Hơn ${yearsOfExperience} năm xây dựng`,
 			heroDescriptionHighlight: "ứng dụng web hiệu suất cao",
 			heroDescriptionPart2:
@@ -133,7 +133,7 @@ const resources: Record<string, { common: Translations["common"] }> = {
 			myBlog: "ブログを見る",
 			// New hero section keys
 			availableForWork: "新しい機会を探しています",
-			role: "シニアエンジニア",
+			role: "シニアソフトウェアエンジニア",
 			heroDescriptionPart1: `${yearsOfExperience}年以上にわたり`,
 			heroDescriptionHighlight: "高性能なWebアプリケーション",
 			heroDescriptionPart2:
