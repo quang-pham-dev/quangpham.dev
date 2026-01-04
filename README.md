@@ -1,125 +1,119 @@
 # quangpham.dev
 
-My personal portfolio website built with Next.js and TypeScript, featuring a beautiful dark mode UI and smooth animations.
+My personal portfolio website built with Next.js and TypeScript, featuring a beautiful dark mode UI, smooth animations, and a robust CI/CD pipeline.
 
-## Tech Stack
+## 🚀 Tech Stack
 
 ### Core
 
-- Next.js 15.1.3
-- React 19.0.0
-- TypeScript 5
-- TailwindCSS 3.4.1
+- **Next.js 16.1.1** (App Router, Turbopack)
+- **React 19.2.3**
+- **TypeScript 5.x**
+- **Bun** (Package Manager & Runtime)
 
 ### UI & Animation
 
-- Framer Motion 11.15.0
-- Lucide React 0.469.0
-- Next Themes 0.4.4
-- Radix UI
-- Tailwind Merge 2.6.0
-- Tailwind Animate 1.0.7
+- **Tailwind CSS 3.x**
+- **Framer Motion 12.x**
+- **Radix UI** primitives
+- **Lucide React** icons
+- **Next Themes** (Dark mode)
 
-### Analytics & Monitoring
+### Development & Quality
 
-- Vercel Analytics
-- Vercel Speed Insights
+- **Biome** (Linting & Formatting)
+- **Knip** (Dead code elimination)
+- **Vitest** (Unit Testing)
+- **Playwright** (E2E Testing)
+- **Storybook 10** (Component Development)
+- **Husky & Lint-staged** (Git Hooks)
 
-### Development Tools
+## 🛠️ CI/CD Pipeline
 
-- Biome 1.9.4
-- Vitest 2.1.8
-- Playwright 1.49.1
-- Storybook 8.4.7
-- Knip 5.41.1
-- Lefthook 1.10.1
+This project uses **GitHub Actions** for continuous integration and delivery.
 
-## Prerequisites
+### Git Flow Strategy
 
-- Node.js
-- Bun (recommended)
+- `develop`: Main development branch. PRs merge here.
+- `main`: Production branch. Deploys to Vercel.
 
-## Getting Started
+| Workflow | Triggers | Jobs |
+|----------|----------|------|
+| **CI** | Push/PR to `main`, `develop` | `lint` (Biome + Knip), `typecheck` (TSC), `build` (Next.js) |
+| **E2E** | PR to `main`, `develop` | `e2e` (Playwright) |
+| **Dependabot** | Weekly (Mon 9AM VN) | Targets `develop` branch for npm updates |
 
-1. Clone the repository:
+### Git Hooks
 
-```bash
-git clone https://github.com/quang-pham-dev/quangpham.dev
-cd quangpham.dev
-```
+- **pre-commit**: Runs `lint-staged` (Biome check & fix) on staged files.
+- **pre-push**: Runs `typecheck` and `unit tests` to ensure quality before pushing.
 
-2. Install dependencies:
+## 🏃‍♂️ Getting Started
 
-```bash
-bun install
-```
+1. **Clone the repository:**
 
-3. Create a `.env` file based on `.env.example`:
+   ```bash
+   git clone https://github.com/quang-pham-dev/quangpham.dev
+   cd quangpham.dev
+   ```
 
-```bash
-cp .env.example .env
-```
+2. **Install dependencies:**
 
-4. Start the development server:
+   ```bash
+   bun install
+   ```
 
-```bash
-bun dev
-```
+3. **Environment Setup:**
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   ```bash
+   cp .env.example .env
+   ```
 
-## Available Scripts
+4. **Start Development:**
+
+   ```bash
+   bun dev
+   ```
+   Open [http://localhost:3000](http://localhost:3000) to view.
+
+## 📜 Available Scripts
 
 ### Development
+- `bun dev`: Start dev server with Turbopack
+- `bun build`: Build for production
+- `bun start`: Start production server
+- `bun storybook`: Start Storybook
 
-- `bun dev` - Start development server with Turbopack
-- `bun build` - Build for production
-- `bun start` - Start production server
-- `bun storybook` - Start Storybook development server
+### Quality Checks
+- `bun check`: Run Biome lint & check
+- `bun check:fix`: Auto-fix Biome issues
+- `bun check:unused`: Find unused code with Knip
+- `bun lint`: (Legacy) ESLint script
 
-### Testing & Code Quality
+### Testing
+- `bun test`: Run unit tests (Vitest)
+- `bun test:coverage`: Generate coverage report
+- `bun e2e`: Run E2E tests (Playwright)
 
-- `bun test` - Run Vitest tests
-- `bun test:ui` - Run Vitest UI
-- `bun test:coverage` - Generate test coverage
-- `bun e2e` - Run Playwright E2E tests
-- `bun e2e:ui` - Run Playwright tests with UI
-- `bun check` - Run Biome checks
-- `bun check:fix` - Fix Biome issues
-- `bun check:unused` - Check for unused exports
-- `bun check:unused:fix` - Fix unused exports
+## 📂 Project Structure
 
-## Project Structure
+```
+├── .github/          # GitHub Actions workflows & configuring
+├── app/              # Next.js App Router
+├── assets/           # Static assets (images, fonts)
+├── components/       # React components
+├── config/           # App configuration
+├── e2e/              # Playwright tests
+├── hooks/            # Custom React hooks
+├── lib/              # Utilities & libraries
+├── public/           # Public static files
+└── test/             # Unit tests & setup
+```
 
-- `app/` - Next.js app router pages and layouts
-- `assets` - App assets
-- `components/` - Reusable UI components
-- `config/` - Application configuration
-- `constants/` - Global constants
-- `hooks` - Custom hooks
-- `lib/` - Utility functions and libraries
-- `public/` - Static assets
-- `e2e/` - End-to-end tests
-- `test/` - Unit tests
+## 👤 Author
 
-## Features
+**Quang Pham** ([@quang-pham-dev](https://github.com/quang-pham-dev))
 
-- ⚡️ Next.js 15 with App Router
-- 💨 Tailwind CSS for styling
-- 🎨 Dark mode support
-- 🔍 SEO optimized
-- 📱 Fully responsive
-- ✨ Modern animations with Framer Motion
-- 📊 Performance monitoring
-- 🧪 Testing with Vitest and Playwright
-- 📚 Component documentation with Storybook
-- 🔍 Type checking with TypeScript
-- 🧹 Code quality tools (Biome, Knip)
-
-## Author
-
-Quang Pham ([@quang-pham-dev](https://www.linkedin.com/in/quang-pham-dev/))
-
-## License
+## 📄 License
 
 MIT License
