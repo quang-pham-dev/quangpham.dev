@@ -25,7 +25,7 @@ const nextConfig: NextConfig = {
 		optimizePackageImports: [
 			"@components",
 			"@radix-ui/react-slot",
-			"@radix-ui/react-dropdown-menu",
+			"lucide-react",
 			"tailwindcss",
 			"framer-motion",
 		],

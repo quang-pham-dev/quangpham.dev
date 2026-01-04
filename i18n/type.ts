@@ -14,6 +14,19 @@ export interface Translations {
 		myResume: string
 		myProjects: string
 		myBlog: string
+		// New hero section keys
+		availableForWork: string
+		role: string
+		heroDescriptionPart1: string
+		heroDescriptionHighlight: string
+		heroDescriptionPart2: string
+		viewMyWork: string
+		downloadResume: string
+		// Navigation keys
+		navProjects: string
+		navResume: string
+		navBlog: string
+		navContact: string
 		connect: {
 			linkedin: string
 			twitter: string

@@ -1,21 +1,18 @@
 # lefthook.yml
 
 pre-commit:
-  only:
-    - ref: dev/*
+  parallel: true
   commands:
     lint:
-      run: bun run check --fix
       glob: "*.{ts,js,tsx,jsx}"
+      run: bun run check --fix {staged_files} && git add {staged_files}
     test:
-      run: bun run test
+      run: bun run test --run
 
 pre-push:
+  parallel: true
   commands:
-    test:
-      run: bun run test
-      skip: true
-    lint:
+    check:
       run: bun run check
-      only:
-        - ref: main
+    test:
+      run: bun run test --run

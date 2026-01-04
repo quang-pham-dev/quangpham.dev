@@ -8,7 +8,28 @@ export default {
 		"./app/**/*.{js,ts,jsx,tsx,mdx}",
 	],
 	theme: {
+		container: {
+			center: true,
+			padding: "1.5rem",
+			screens: {
+				"2xl": "1400px",
+			},
+		},
 		extend: {
+			fontSize: {
+				display: [
+					"4.5rem",
+					{ lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" },
+				],
+				"display-sm": [
+					"3.5rem",
+					{ lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" },
+				],
+				title: [
+					"2rem",
+					{ lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "600" },
+				],
+			},
 			colors: {
 				background: "hsl(var(--background))",
 				foreground: "hsl(var(--foreground))",
@@ -80,12 +101,27 @@ export default {
 					"0%": { transform: "rotate(0deg)" },
 					"100%": { transform: "rotate(360deg)" },
 				},
+				"fade-in": {
+					"0%": { opacity: "0", transform: "translateY(16px)" },
+					"100%": { opacity: "1", transform: "translateY(0)" },
+				},
+				"fade-in-up": {
+					"0%": { opacity: "0", transform: "translateY(24px)" },
+					"100%": { opacity: "1", transform: "translateY(0)" },
+				},
+				"slide-in-right": {
+					"0%": { opacity: "0", transform: "translateX(-12px)" },
+					"100%": { opacity: "1", transform: "translateX(0)" },
+				},
 			},
 			animation: {
 				"rotate-gradient": "rotate-gradient 3s linear infinite",
 				"border-flow": "border-flow 3s infinite",
 				shine: "shine 3s linear infinite",
 				"border-rotate": "border-rotate 3s linear infinite",
+				"fade-in": "fade-in 0.6s ease-out forwards",
+				"fade-in-up": "fade-in-up 0.8s ease-out forwards",
+				"slide-in-right": "slide-in-right 0.5s ease-out forwards",
 			},
 		},
 	},

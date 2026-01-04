@@ -27,6 +27,20 @@ const resources: Record<string, { common: Translations["common"] }> = {
 			myResume: "My Resume",
 			myProjects: "My Projects",
 			myBlog: "My Blog",
+			// New hero section keys
+			availableForWork: "Available for new opportunities",
+			role: "Senior Engineer",
+			heroDescriptionPart1: `${yearsOfExperience}+ years crafting`,
+			heroDescriptionHighlight: "high-performance web applications",
+			heroDescriptionPart2:
+				"Specialized in frontend architecture, performance optimization, and building engineering teams that ship exceptional products.",
+			viewMyWork: "View my work",
+			downloadResume: "Download Resume",
+			// Navigation keys
+			navProjects: "Projects",
+			navResume: "Resume",
+			navBlog: "Blog",
+			navContact: "Contact",
 			connect: {
 				linkedin: "Connect on LinkedIn",
 				twitter: "Follow me on Twitter",
@@ -60,11 +74,25 @@ const resources: Record<string, { common: Translations["common"] }> = {
 			},
 			greeting: "Xin chào 👋,",
 			intro: "Tôi là Quang Phạm!",
-			description: `Kỹ sư phần mềm cấp cao với hơn ${yearsOfExperience} năm kinh nghiệm trong phát triển công nghệ web tiên tiến, chuyên về tối ưu hoá hiệu suất, UI/UX và kiến trúc có khả năng mở rộng. Có kinh nghiệm dẫn dắt nhóm kỹ thuật, đảm bảo chất lượng mã nguồn và hướng dẫn các nhà phát triển để nâng cao hiệu suất làm việc của đội nhóm.`,
+			description: `Kỹ sư phần mềm cấp cao với hơn ${yearsOfExperience} năm kinh nghiệm trong phát triển công nghệ web tiên tiến, chuyên về tối ưu hoá hiệu suất, UI/UX và kiến trúc có khả năng mở rộng. Có kinh nghiệm dẫn dắt nhóm kỹ thuật, đảm bảo chất lượng mã nguồn và hướng dẫn các nhà phát triển để nâng cao hiệu suất làm việc của đội nhóm.`,
 			position: "Kỹ sư phần mềm cao cấp tại",
 			myResume: "My Resume",
 			myProjects: "My Projects",
 			myBlog: "My Blog",
+			// New hero section keys
+			availableForWork: "Sẵn sàng cho cơ hội mới",
+			role: "Kỹ sư cao cấp",
+			heroDescriptionPart1: `Hơn ${yearsOfExperience} năm xây dựng`,
+			heroDescriptionHighlight: "ứng dụng web hiệu suất cao",
+			heroDescriptionPart2:
+				"Chuyên về kiến trúc frontend, tối ưu hóa hiệu suất và xây dựng các đội ngũ kỹ thuật tạo ra sản phẩm xuất sắc.",
+			viewMyWork: "Xem dự án",
+			downloadResume: "Tải CV",
+			// Navigation keys
+			navProjects: "Dự án",
+			navResume: "CV",
+			navBlog: "Blog",
+			navContact: "Liên hệ",
 			connect: {
 				linkedin: "Kết nối trên LinkedIn",
 				twitter: "Theo dõi trên Twitter",
@@ -103,6 +131,20 @@ const resources: Record<string, { common: Translations["common"] }> = {
 			myResume: "履歴書を見る",
 			myProjects: "プロジェクトを見る",
 			myBlog: "ブログを見る",
+			// New hero section keys
+			availableForWork: "新しい機会を探しています",
+			role: "シニアエンジニア",
+			heroDescriptionPart1: `${yearsOfExperience}年以上にわたり`,
+			heroDescriptionHighlight: "高性能なWebアプリケーション",
+			heroDescriptionPart2:
+				"を開発。フロントエンドアーキテクチャ、パフォーマンス最適化、優れた製品を生み出すエンジニアリングチームの構築を専門としています。",
+			viewMyWork: "実績を見る",
+			downloadResume: "履歴書をダウンロード",
+			// Navigation keys
+			navProjects: "プロジェクト",
+			navResume: "履歴書",
+			navBlog: "ブログ",
+			navContact: "連絡先",
 			connect: {
 				linkedin: "LinkedInでつながる",
 				twitter: "Twitterでフォロー",

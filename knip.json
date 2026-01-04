@@ -10,7 +10,9 @@
 		".storybook/main.{js,ts}",
 		"**/*.stories.tsx",
 		"config/index.ts",
-		"e2e/index.ts"
+		"e2e/index.ts",
+		"**/*.test.ts",
+		"**/*.test.tsx"
 	],
 	"project": [
 		"app/**/*.{js,jsx,ts,tsx}",
@@ -32,7 +34,8 @@
 		"@storybook/nextjs",
 		"@storybook/react",
 		"commitizen",
-		"lint-staged"
+		"lefthook",
+		"@commitlint/*"
 	],
 	"ignoreBinaries": ["lighthouse"],
 	"ignoreExportsUsedInFile": true,
@@ -44,7 +47,7 @@
 		]
 	},
 	"vitest": {
-		"config": ["vitest.config.mts"],
+		"config": ["vitest.config.ts"],
 		"entry": ["test/setup-tests.ts"]
 	},
 	"storybook": {

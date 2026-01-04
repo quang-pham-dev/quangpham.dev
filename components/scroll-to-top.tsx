@@ -10,7 +10,7 @@ export function ScrollToTopButton() {
 	const { isVisible, scrollToTop } = useScrollToTop()
 
 	return (
-		<AnimatePresence>
+		<AnimatePresence onExitComplete={scrollToTop}>
 			<RenderWith isTrue={isVisible}>
 				<motion.button
 					initial={{ opacity: 0, y: 20 }}

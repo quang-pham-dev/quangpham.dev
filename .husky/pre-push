@@ -1,3 +1,0 @@
-# TypeScript check + Tests before push
-bunx tsc --noEmit
-bun run test --passWithNoTests
