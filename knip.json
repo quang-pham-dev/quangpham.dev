@@ -1,10 +1,58 @@
 {
-	"project": "quangpham.dev",
-	"output": "dist",
-	"assets": "public",
-	"devServer": {
-		"port": 3000,
-		"hot": true,
-		"open": false
+	"$schema": "https://unpkg.com/knip@5/schema.json",
+	"entry": [
+		"app/**/{page,layout,loading,not-found,error,global-error,route,sitemap,robots,opengraph-image}.{js,jsx,ts,tsx}",
+		"next.config.{js,mjs,ts}",
+		"tailwind.config.{js,ts}",
+		"postcss.config.{js,mjs,cjs}",
+		"vitest.config.{js,mjs,ts,mts}",
+		"playwright.config.{js,ts}",
+		".storybook/main.{js,ts}",
+		"**/*.stories.tsx",
+		"config/index.ts",
+		"e2e/index.ts"
+	],
+	"project": [
+		"app/**/*.{js,jsx,ts,tsx}",
+		"components/**/*.{js,jsx,ts,tsx}",
+		"lib/**/*.{js,jsx,ts,tsx}",
+		"hooks/**/*.{js,jsx,ts,tsx}",
+		"config/**/*.{js,jsx,ts,tsx}",
+		"constants/**/*.{js,jsx,ts,tsx}",
+		"i18n/**/*.{js,jsx,ts,tsx}",
+		"test/**/*.{js,jsx,ts,tsx}",
+		"e2e/**/*.{js,jsx,ts,tsx}"
+	],
+	"ignore": ["**/*.d.ts"],
+	"ignoreDependencies": [
+		"postcss-load-config",
+		"@vitest/coverage-v8",
+		"@next/bundle-analyzer",
+		"@tailwindcss/typography",
+		"@storybook/nextjs",
+		"@storybook/react",
+		"commitizen",
+		"lint-staged"
+	],
+	"ignoreBinaries": ["lighthouse"],
+	"ignoreExportsUsedInFile": true,
+	"next": {
+		"entry": [
+			"app/**/robot.ts",
+			"app/**/sitemap.ts",
+			"app/**/opengraph-image.tsx"
+		]
+	},
+	"vitest": {
+		"config": ["vitest.config.mts"],
+		"entry": ["test/setup-tests.ts"]
+	},
+	"storybook": {
+		"config": [".storybook/main.ts"],
+		"entry": ["**/*.stories.tsx"]
+	},
+	"playwright": {
+		"config": ["playwright.config.ts"],
+		"entry": ["e2e/**/*.{test,spec}.ts"]
 	}
 }

@@ -1,8 +1,8 @@
+import { ArrowUpRightIcon } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { useTranslations } from "@/hooks"
 import type { TranslationKey } from "@/i18n/type"
 import { cn } from "@/lib/utils"
-import { ArrowUpRightIcon } from "lucide-react"
 
 interface AnimatedCardsProps {
 	url: string
@@ -12,7 +12,6 @@ interface AnimatedCardsProps {
 
 const AnimatedCards = ({ url, text, isDisabled }: AnimatedCardsProps) => {
 	const { t } = useTranslations()
-	console.log("isDisabled", url, isDisabled)
 	return (
 		<Card className="group relative overflow-hidden">
 			<div className="absolute inset-0">
@@ -32,9 +31,7 @@ const AnimatedCards = ({ url, text, isDisabled }: AnimatedCardsProps) => {
 					</div>
 				) : (
 					<a
-						className={cn(
-							"flex items-center underline font-semibold"
-						)}
+						className={cn("flex items-center underline font-semibold")}
 						href={url}
 						target="_blank"
 						rel="noopener noreferrer"

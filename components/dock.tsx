@@ -1,6 +1,6 @@
 "use client"
 
-import { type VariantProps, cva } from "class-variance-authority"
+import { cva, type VariantProps } from "class-variance-authority"
 import {
 	type MotionValue,
 	motion,
@@ -83,11 +83,13 @@ const DockIcon = React.memo(
 		size,
 		magnification = DEFAULT_MAGNIFICATION,
 		distance = DEFAULT_DISTANCE,
-		mousex = useMotionValue(Number.POSITIVE_INFINITY),
+		mousex: mousexProp,
 		className,
 		children,
 		...props
 	}: DockIconProps) => {
+		const defaultMouseX = useMotionValue(Number.POSITIVE_INFINITY)
+		const mousex = mousexProp ?? defaultMouseX
 		const ref = useRef<HTMLDivElement>(null)
 
 		const distanceCalc = useTransform(mousex, (val: number) => {

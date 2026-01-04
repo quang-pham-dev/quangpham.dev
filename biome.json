@@ -1,5 +1,5 @@
 {
-	"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+	"$schema": "https://biomejs.dev/schemas/2.3.11/schema.json",
 	"vcs": {
 		"enabled": true,
 		"clientKind": "git",
@@ -10,9 +10,17 @@
 		"enabled": true,
 		"lineWidth": 80
 	},
-	"organizeImports": {
-		"enabled": true
+	"files": {
+		"includes": [
+			"**/*.ts",
+			"**/*.tsx",
+			"**/*.js",
+			"**/*.jsx",
+			"**/*.json",
+			"**/*.md"
+		]
 	},
+	"assist": { "actions": { "source": { "organizeImports": "on" } } },
 	"linter": {
 		"enabled": true,
 		"rules": {
@@ -22,7 +30,8 @@
 				"noConsole": "warn"
 			},
 			"style": {
-				"recommended": true
+				"recommended": true,
+				"noProcessEnv": "off"
 			},
 			"complexity": {
 				"recommended": true
@@ -44,8 +53,7 @@
 				"recommended": true
 			},
 			"nursery": {
-				"recommended": true,
-				"noProcessEnv": "off"
+				"recommended": true
 			}
 		}
 	},
@@ -55,9 +63,17 @@
 			"trailingCommas": "es5"
 		}
 	},
+	"css": {
+		"parser": {
+			"cssModules": true
+		},
+		"linter": {
+			"enabled": false
+		}
+	},
 	"overrides": [
 		{
-			"include": ["app/**"],
+			"includes": ["**/app/**"],
 			"linter": {
 				"rules": {
 					"suspicious": {

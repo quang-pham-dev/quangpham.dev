@@ -20,7 +20,9 @@ export const TranslationContext = createContext<TranslationContextType | null>(
 
 export function TranslationProvider({
 	children,
-}: { children: React.ReactNode }) {
+}: {
+	children: React.ReactNode
+}) {
 	const [isInitialized, setIsInitialized] = useState(false)
 	const [currentLanguage, setCurrentLanguage] = useState(i18n.language || "en")
 
@@ -46,7 +48,7 @@ export function TranslationProvider({
 			localStorage.setItem(LANG_STORAGE_KEY, lang)
 			setCurrentLanguage(lang)
 		} catch (error) {
-			// biome-ignore lint/suspicious/noConsole: <explanation>
+			// biome-ignore lint/suspicious/noConsole: Logging language change errors is acceptable
 			console.error("Failed to change language:", error)
 		}
 	}

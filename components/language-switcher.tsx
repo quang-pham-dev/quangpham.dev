@@ -1,5 +1,6 @@
 "use client"
 
+import { Check, Globe } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
 	DropdownMenu,
@@ -8,7 +9,6 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { useTranslations } from "@/hooks/use-translation"
-import { Check, Globe } from "lucide-react"
 
 const languages = [
 	{ code: "en", name: "English" },

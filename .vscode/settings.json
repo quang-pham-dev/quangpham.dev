@@ -4,10 +4,7 @@
 	"editor.renderWhitespace": "all",
 	"editor.rulers": [120, 160],
 	"editor.codeActionsOnSave": {
-		"source.fixAll": "always",
-		"source.organizeImports": "never",
-		"source.organizeImports.biome": "always",
-		"quickfix.biome": "always"
+		"source.fixAll.biome": "explicit"
 	},
 	"eslint.enable": false,
 	"prettier.enable": false,
@@ -47,7 +44,7 @@
 		"editor.defaultFormatter": "vscode.typescript-language-features"
 	},
 	"[json]": {
-		"editor.defaultFormatter": "biomejs.biome"
+		"editor.defaultFormatter": "vscode.json-language-features"
 	},
 	"[markdown]": {
 		"editor.defaultFormatter": "yzhang.markdown-all-in-one"

@@ -1,5 +1,5 @@
-import { AnimatedFade } from "@/components/animated-fade"
 import Link from "next/link"
+import { AnimatedFade } from "@/components/animated-fade"
 
 interface InformationItemProps {
 	id: number

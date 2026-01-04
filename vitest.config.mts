@@ -24,6 +24,6 @@ export default defineConfig({
 		exclude: [...configDefaults.exclude, "e2e/*"],
 		globals: true,
 		reporters: ["default", "html"],
-		setupFiles: "./setupTests.ts",
+		setupFiles: "./test/setup-tests.ts",
 	},
 })

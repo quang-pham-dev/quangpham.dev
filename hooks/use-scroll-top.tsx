@@ -20,7 +20,7 @@ export const useScrollToTop = () => {
 		})
 	}
 
-	// biome-ignore lint/correctness/useExhaustiveDependencies: <explanation>
+	// biome-ignore lint/correctness/useExhaustiveDependencies: toggleVisibility is stable and does not need to be in deps
 	useEffect(() => {
 		window.addEventListener("scroll", toggleVisibility)
 		return () => {
