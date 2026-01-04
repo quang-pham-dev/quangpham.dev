@@ -1,24 +1,24 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useCallback, useEffect, useState } from "react"
 
 export const useScrollToTop = () => {
 	const [isVisible, setIsVisible] = useState(false)
 
-	const toggleVisibility = () => {
-		if (window.scrollY > 300) {
+	const toggleVisibility = useCallback(() => {
+		if (window.scrollY > 30) {
 			setIsVisible(true)
 		} else {
 			setIsVisible(false)
 		}
-	}
+	}, [])
 
-	const scrollToTop = () => {
+	const scrollToTop = useCallback(() => {
 		window.scrollTo({
 			top: 0,
 			behavior: "smooth",
 		})
-	}
+	}, [])
 
 	// biome-ignore lint/correctness/useExhaustiveDependencies: toggleVisibility is stable and does not need to be in deps
 	useEffect(() => {
