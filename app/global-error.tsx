@@ -1,16 +1,62 @@
 "use client" // Error boundaries must be Client Components
 
-import { t } from "i18next"
+import { Geist } from "next/font/google"
+import { NextIntlClientProvider } from "next-intl"
+import { useEffect, useState } from "react"
+import GlobalErrorContent from "@/components/sections/global-error-content"
+import {
+	defaultLocale,
+	isLocale,
+	LOCALE_COOKIE_NAME,
+	type Locale,
+} from "@/i18n/config"
+import en from "@/i18n/messages/en.json"
+import ja from "@/i18n/messages/ja.json"
+import "@/app/globals.css"
 
-import { Button } from "@/components/ui/button"
+const geistSans = Geist({
+	variable: "--font-geist-sans",
+	subsets: ["latin"],
+	display: "swap",
+})
 
-const GlobalError = ({ reset }: { reset: () => void }) => {
-	return (
-		<>
-			<h1>{t("errors.somethingWrong")}</h1>
-			<Button onClick={reset}>{t("errors.tryAgain")}</Button>
-		</>
-	)
+const messagesMap: Record<Locale, typeof en> = {
+	en,
+	ja,
 }
 
-export default GlobalError
+interface GlobalErrorProps {
+	reset: () => void
+}
+
+export default function GlobalError({ reset }: GlobalErrorProps) {
+	const [locale, setLocale] = useState<Locale>(defaultLocale)
+
+	useEffect(() => {
+		const match = document.cookie
+			.split("; ")
+			.find((c) => c.startsWith(`${LOCALE_COOKIE_NAME}=`))
+
+		const value = match?.split("=")[1]
+		if (isLocale(value)) {
+			setLocale(value)
+		}
+	}, [])
+
+	const messages = messagesMap[locale]
+
+	return (
+		<html lang={locale} className={geistSans.variable}>
+			<head>
+				<meta charSet="utf-8" />
+				<meta name="viewport" content="width=device-width, initial-scale=1" />
+				<title>Error - Something went wrong</title>
+			</head>
+			<body className="antialiased bg-background text-foreground">
+				<NextIntlClientProvider locale={locale} messages={messages}>
+					<GlobalErrorContent reset={reset} />
+				</NextIntlClientProvider>
+			</body>
+		</html>
+	)
+}

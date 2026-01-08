@@ -2,11 +2,13 @@ import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
-
-import { TranslationProvider } from "@/components/i18next-provider"
+import { NextIntlClientProvider } from "next-intl"
+import { getLocale, getMessages } from "next-intl/server"
 import { ThemeProvider } from "@/components/theme-provider"
+import { TranslationProvider } from "@/components/translation-provider"
 import { siteConfig } from "@/config/site"
 import { SITE_URL } from "@/constants"
+import type { Locale } from "@/i18n/config"
 import "./globals.css"
 
 const geistSans = Geist({
@@ -124,13 +126,17 @@ export const metadata: Metadata = {
 	},
 }
 
-export default function RootLayout({
+export default async function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode
 }>) {
+	// Get locale and messages for next-intl
+	const locale = (await getLocale()) as Locale
+	const messages = await getMessages()
+
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html lang={locale} suppressHydrationWarning>
 			<head>
 				<meta
 					name="viewport"
@@ -144,9 +150,13 @@ export default function RootLayout({
 				{/* Load analytics after page load */}
 				<Analytics mode="auto" />
 				<SpeedInsights />
-				<ThemeProvider>
-					<TranslationProvider>{children}</TranslationProvider>
-				</ThemeProvider>
+				<NextIntlClientProvider locale={locale} messages={messages}>
+					<ThemeProvider>
+						<TranslationProvider initialLocale={locale}>
+							{children}
+						</TranslationProvider>
+					</ThemeProvider>
+				</NextIntlClientProvider>
 			</body>
 		</html>
 	)
