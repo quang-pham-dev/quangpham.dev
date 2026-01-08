@@ -1,1 +1,1 @@
-export * from "./root.test"
+export * from "./root.e2e"

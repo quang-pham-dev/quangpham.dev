@@ -11,6 +11,7 @@ vi.mock("next-intl", () => ({
 const mockContextValue = {
 	changeLanguage: vi.fn(),
 	currentLanguage: "en" as const,
+	isPending: false,
 }
 
 describe("useTranslations", () => {
