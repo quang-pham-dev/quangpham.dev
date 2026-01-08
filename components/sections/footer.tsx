@@ -1,3 +1,5 @@
+"use client"
+
 import { MY_NAME } from "@/config/site"
 
 export default function Footer() {

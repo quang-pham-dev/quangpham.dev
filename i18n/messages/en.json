@@ -1,0 +1,47 @@
+{
+	"errors": {
+		"somethingWrong": "Something went wrong",
+		"tryAgain": "Try again",
+		"notFoundTitle": "Page Not Found",
+		"description": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
+		"errorDescription": "An unexpected error occurred. Please try again or return to the home page.",
+		"backToHome": "Back to Home"
+	},
+	"greeting": "Hey 👋,",
+	"intro": "I'm Quang Pham!",
+	"description": "Senior Software Engineer with over 11 years of experience in cutting-edge web technology development, specializing in performance optimization, UI/UX, and scalable architecture. Experienced in leading technical teams, ensuring code quality, and mentoring developers to enhance team efficiency.",
+	"position": "Senior Software Engineer at",
+	"myResume": "My Resume",
+	"myProjects": "My Projects",
+	"myBlog": "My Blog",
+	"availableForWork": "Available for new opportunities",
+	"role": "Senior Software Engineer",
+	"heroDescriptionPart1": "11+ years crafting",
+	"heroDescriptionHighlight": "high-performance web applications",
+	"heroDescriptionPart2": "Specialized in frontend architecture, performance optimization, and building engineering teams that ship exceptional products.",
+	"viewMyWork": "View my work",
+	"downloadResume": "Download Resume",
+	"navProjects": "Projects",
+	"navResume": "Resume",
+	"navBlog": "Blog",
+	"navContact": "Contact",
+	"connect": {
+		"linkedin": "Connect on LinkedIn",
+		"twitter": "Follow me on Twitter",
+		"github": "Check out my GitHub"
+	},
+	"social": {
+		"linkedin": {
+			"title": "Connect on LinkedIn",
+			"label": "Visit Quang Pham's LinkedIn profile"
+		},
+		"twitter": {
+			"title": "Follow me on Twitter",
+			"label": "Follow Quang Pham on Twitter"
+		},
+		"github": {
+			"title": "Check out my GitHub",
+			"label": "View Quang Pham's GitHub profile"
+		}
+	}
+}

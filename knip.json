@@ -8,7 +8,6 @@
 		"vitest.config.{js,mjs,ts,mts}",
 		"playwright.config.{js,ts}",
 		".storybook/main.{js,ts}",
-		"**/*.stories.tsx",
 		"config/index.ts",
 		"e2e/index.ts",
 		"**/*.test.ts",
@@ -27,9 +26,6 @@
 	],
 	"ignore": ["**/*.d.ts"],
 	"ignoreDependencies": [
-		"postcss-load-config",
-		"@vitest/coverage-v8",
-		"@next/bundle-analyzer",
 		"@tailwindcss/typography",
 		"@storybook/nextjs",
 		"@storybook/react",
@@ -37,7 +33,6 @@
 		"lefthook",
 		"@commitlint/*"
 	],
-	"ignoreBinaries": ["lighthouse"],
 	"ignoreExportsUsedInFile": true,
 	"next": {
 		"entry": [

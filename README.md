@@ -26,7 +26,6 @@ My personal portfolio website built with Next.js and TypeScript, featuring a bea
 - **Vitest** (Unit Testing)
 - **Playwright** (E2E Testing)
 - **Storybook 10** (Component Development)
-- **Husky & Lint-staged** (Git Hooks)
 
 ## 🛠️ CI/CD Pipeline
 

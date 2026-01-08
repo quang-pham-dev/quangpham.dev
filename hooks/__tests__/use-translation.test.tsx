@@ -1,24 +1,48 @@
 import { renderHook } from "@testing-library/react"
-import { describe, expect, it, vi } from "vitest"
-import { TranslationContext } from "@/components/i18next-provider"
+import { beforeEach, describe, expect, it, vi } from "vitest"
+import { LanguageContext } from "@/components/translation-provider"
 import { useTranslations } from "../use-translation"
 
+// Mock next-intl's useTranslations
+vi.mock("next-intl", () => ({
+	useTranslations: () => (key: string) => `translated:${key}`,
+}))
+
 const mockContextValue = {
-	t: vi.fn(),
 	changeLanguage: vi.fn(),
-	currentLanguage: "en",
+	currentLanguage: "en" as const,
 }
 
 describe("useTranslations", () => {
+	beforeEach(() => {
+		vi.clearAllMocks()
+	})
+
 	it("should return translation context when used within provider", () => {
 		const wrapper = ({ children }: { children: React.ReactNode }) => (
-			<TranslationContext.Provider value={mockContextValue}>
+			<LanguageContext.Provider value={mockContextValue}>
 				{children}
-			</TranslationContext.Provider>
+			</LanguageContext.Provider>
 		)
 
 		const { result } = renderHook(() => useTranslations(), { wrapper })
-		expect(result.current).toBe(mockContextValue)
+
+		expect(result.current.currentLanguage).toBe("en")
+		expect(result.current.changeLanguage).toBe(mockContextValue.changeLanguage)
+		expect(typeof result.current.t).toBe("function")
+	})
+
+	it("should provide t function from next-intl", () => {
+		const wrapper = ({ children }: { children: React.ReactNode }) => (
+			<LanguageContext.Provider value={mockContextValue}>
+				{children}
+			</LanguageContext.Provider>
+		)
+
+		const { result } = renderHook(() => useTranslations(), { wrapper })
+
+		// Verify t function works (mocked to return "translated:<key>")
+		expect(result.current.t("greeting")).toBe("translated:greeting")
 	})
 
 	it("should throw error when used outside provider", () => {
