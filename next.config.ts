@@ -1,7 +1,16 @@
+import withBundleAnalyzer from "@next/bundle-analyzer"
 import type { NextConfig } from "next"
+import createNextIntlPlugin from "next-intl/plugin"
+
+const withNextIntl = createNextIntlPlugin()
+
+const { ANALYZE, NODE_ENV } = process.env
 
 const nextConfig: NextConfig = {
 	reactStrictMode: true,
+	// Note: cacheComponents disabled due to conflict with next-intl's dynamic locale reading
+	// This project uses localStorage-based locale without URL routing
+	reactCompiler: true,
 	// Optimize images
 	images: {
 		minimumCacheTTL: 60,
@@ -17,7 +26,12 @@ const nextConfig: NextConfig = {
 	},
 	// Optimize JavaScript
 	compiler: {
-		removeConsole: process.env.NODE_ENV === "production",
+		removeConsole:
+			NODE_ENV === "production"
+				? {
+						exclude: ["error"],
+					}
+				: false,
 	},
 	// Enable experimental features
 	experimental: {
@@ -55,4 +69,8 @@ const nextConfig: NextConfig = {
 	compress: true,
 }
 
-export default nextConfig
+const withBundleAnalyzerWrapper = withBundleAnalyzer({
+	enabled: ANALYZE === "true",
+})
+
+export default withBundleAnalyzerWrapper(withNextIntl(nextConfig))

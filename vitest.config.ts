@@ -7,6 +7,7 @@ export default defineConfig({
 	plugins: [react(), viteTsconfigPaths()],
 	test: {
 		include: ["**/__tests__/**/*.ts?(x)", "**/?(*.)+(spec|test).ts?(x)"],
+		exclude: ["node_modules", "e2e/**/*", "dist/*", ".next/*"],
 		coverage: {
 			reportsDirectory: "vitest-report",
 			include: ["app/**/*", "components/**/*", "lib/**/*"],
@@ -34,7 +35,6 @@ export default defineConfig({
 		},
 		css: true,
 		environment: "happy-dom",
-		exclude: ["node_modules", "e2e/*", "dist/*", ".next/*"],
 		globals: true,
 		reporters: ["default", "html"],
 		setupFiles: "./test/setup-tests.ts",

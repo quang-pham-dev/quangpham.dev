@@ -1,0 +1,47 @@
+{
+	"errors": {
+		"somethingWrong": "何らかの問題が発生しました",
+		"tryAgain": "もう一度試してください",
+		"notFoundTitle": "ページが見つかりません",
+		"description": "あなたが見つけたページは削除され、名前が変更され、または現在利用できない状態でした可能性があります。",
+		"errorDescription": "予期しないエラーが発生しました。もう一度お試しいただくか、ホームページにお戻りください。",
+		"backToHome": "戻る"
+	},
+	"greeting": "こんにちは 👋,",
+	"intro": "クアン・ファムです!",
+	"description": "最先端のWeb技術開発において11年以上の経験を持つシニアソフトウェアエンジニア。パフォーマンス最適化、UI/UX、スケーラブルなアーキテクチャに特化。技術チームのリーダー経験があり、コード品質の確保や開発者の指導を通じて、チームの効率向上に貢献。",
+	"position": "シニアソフトウェアエンジニア @",
+	"myResume": "履歴書を見る",
+	"myProjects": "プロジェクトを見る",
+	"myBlog": "ブログを見る",
+	"availableForWork": "新しい機会を探しています",
+	"role": "シニアソフトウェアエンジニア",
+	"heroDescriptionPart1": "11年以上にわたり",
+	"heroDescriptionHighlight": "高性能なWebアプリケーション",
+	"heroDescriptionPart2": "を開発。フロントエンドアーキテクチャ、パフォーマンス最適化、優れた製品を生み出すエンジニアリングチームの構築を専門としています。",
+	"viewMyWork": "実績を見る",
+	"downloadResume": "履歴書をダウンロード",
+	"navProjects": "プロジェクト",
+	"navResume": "履歴書",
+	"navBlog": "ブログ",
+	"navContact": "連絡先",
+	"connect": {
+		"linkedin": "LinkedInでつながる",
+		"twitter": "Twitterでフォロー",
+		"github": "GitHubをチェック"
+	},
+	"social": {
+		"linkedin": {
+			"title": "LinkedInでつながる",
+			"label": "クアン・ファムのLinkedInプロフィールを見る"
+		},
+		"twitter": {
+			"title": "Twitterでフォロー",
+			"label": "クアン・ファムをTwitterでフォロー"
+		},
+		"github": {
+			"title": "GitHubをチェック",
+			"label": "クアン・ファムのGitHubプロフィールを見る"
+		}
+	}
+}

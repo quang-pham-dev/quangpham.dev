@@ -1,17 +1,18 @@
 "use client"
 
 import { Globe } from "lucide-react"
+import { useCallback } from "react"
 import { useTranslations } from "@/hooks/use-translation"
+import { localeLabels, locales } from "@/i18n/config"
 
 export const HeaderLanguageToggle = () => {
 	const { changeLanguage, currentLanguage } = useTranslations()
 
-	const toggleLanguage = () => {
-		const langs = ["en", "ja"]
-		const currentIndex = langs.indexOf(currentLanguage)
-		const nextIndex = (currentIndex + 1) % langs.length
-		changeLanguage(langs[nextIndex])
-	}
+	const toggleLanguage = useCallback(() => {
+		const currentIndex = locales.indexOf(currentLanguage)
+		const nextIndex = (currentIndex + 1) % locales.length
+		changeLanguage(locales[nextIndex])
+	}, [currentLanguage, changeLanguage])
 
 	return (
 		<button
@@ -21,7 +22,7 @@ export const HeaderLanguageToggle = () => {
 			aria-label="Toggle language"
 		>
 			<Globe className="w-4 h-4" />
-			<span className="font-medium">{currentLanguage.toUpperCase()}</span>
+			<span className="font-medium">{localeLabels[currentLanguage]}</span>
 		</button>
 	)
 }
