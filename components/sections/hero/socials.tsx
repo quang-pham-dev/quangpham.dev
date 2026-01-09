@@ -5,6 +5,7 @@ import { Github, Linkedin, Twitter } from "lucide-react"
 import Link from "next/link"
 
 import { SOCIAL_LINKS } from "@/constants"
+import { ANALYTICS_EVENTS, trackClick } from "@/lib/analytics"
 
 const { github, linkedin, twitter } = SOCIAL_LINKS
 
@@ -42,6 +43,9 @@ export const HeroSocials = () => {
 					rel="noopener noreferrer"
 					className="p-3 text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-all duration-200"
 					aria-label={link.label}
+					onClick={() =>
+						trackClick(ANALYTICS_EVENTS.CLICK_SOCIAL, { platform: link.label })
+					}
 				>
 					<link.icon className="w-5 h-5" />
 				</Link>

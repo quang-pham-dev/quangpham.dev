@@ -24,7 +24,7 @@
 		"test/**/*.{js,jsx,ts,tsx}",
 		"e2e/**/*.{js,jsx,ts,tsx}"
 	],
-	"ignore": ["**/*.d.ts"],
+	"ignore": ["**/*.d.ts", "hooks/use-feature-flag.ts"],
 	"ignoreDependencies": [
 		"@tailwindcss/typography",
 		"@storybook/nextjs",

@@ -4,6 +4,7 @@ import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { NextIntlClientProvider } from "next-intl"
 import { getLocale, getMessages } from "next-intl/server"
+import { PostHogProvider } from "@/components/posthog-provider"
 import { ThemeProvider } from "@/components/theme-provider"
 import { TranslationProvider } from "@/components/translation-provider"
 import { siteConfig } from "@/config/site"
@@ -152,9 +153,11 @@ export default async function RootLayout({
 				<SpeedInsights />
 				<NextIntlClientProvider locale={locale} messages={messages}>
 					<ThemeProvider>
-						<TranslationProvider initialLocale={locale}>
-							{children}
-						</TranslationProvider>
+						<PostHogProvider>
+							<TranslationProvider initialLocale={locale}>
+								{children}
+							</TranslationProvider>
+						</PostHogProvider>
 					</ThemeProvider>
 				</NextIntlClientProvider>
 			</body>
