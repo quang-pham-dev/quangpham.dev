@@ -1,7 +1,13 @@
 "use client"
 
 import { useRouter } from "next/navigation"
-import { createContext, useCallback, useState, useTransition } from "react"
+import {
+	createContext,
+	useCallback,
+	useMemo,
+	useState,
+	useTransition,
+} from "react"
 import { setUserLocale } from "@/app/actions/set-locale"
 import { defaultLocale, type Locale } from "@/i18n/config"
 
@@ -38,11 +44,14 @@ export function TranslationProvider({
 		[router, currentLanguage]
 	)
 
-	const value = {
-		changeLanguage,
-		currentLanguage,
-		isPending,
-	}
+	const value = useMemo(
+		() => ({
+			changeLanguage,
+			currentLanguage,
+			isPending,
+		}),
+		[changeLanguage, currentLanguage, isPending]
+	)
 
 	return (
 		<LanguageContext.Provider value={value}>

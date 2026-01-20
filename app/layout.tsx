@@ -1,16 +1,14 @@
-import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { NextIntlClientProvider } from "next-intl"
 import { getLocale, getMessages } from "next-intl/server"
-import { PostHogProvider } from "@/components/posthog-provider"
 import { ThemeProvider } from "@/components/theme-provider"
 import { TranslationProvider } from "@/components/translation-provider"
 import { siteConfig } from "@/config/site"
 import { SITE_URL } from "@/constants"
 import type { Locale } from "@/i18n/config"
 import "./globals.css"
+import { PostHogProviderLoader } from "@/components/posthog-provider-loader"
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
@@ -133,31 +131,23 @@ export default async function RootLayout({
 	children: React.ReactNode
 }>) {
 	// Get locale and messages for next-intl
-	const locale = (await getLocale()) as Locale
-	const messages = await getMessages()
+	const [locale, messages] = await Promise.all([
+		getLocale() as Promise<Locale>,
+		getMessages(),
+	])
 
 	return (
 		<html lang={locale} suppressHydrationWarning>
-			<head>
-				<meta
-					name="viewport"
-					content="width=device-width, initial-scale=1.0, viewport-fit=cover"
-				/>
-			</head>
 			<body
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
-				{/* https://vercel.com/docs/analytics/package */}
-				{/* Load analytics after page load */}
-				<Analytics mode="auto" />
-				<SpeedInsights />
 				<NextIntlClientProvider locale={locale} messages={messages}>
 					<ThemeProvider>
-						<PostHogProvider>
+						<PostHogProviderLoader>
 							<TranslationProvider initialLocale={locale}>
 								{children}
 							</TranslationProvider>
-						</PostHogProvider>
+						</PostHogProviderLoader>
 					</ThemeProvider>
 				</NextIntlClientProvider>
 			</body>
