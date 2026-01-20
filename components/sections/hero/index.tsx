@@ -1,5 +1,3 @@
-"use client"
-
 import { HeroActions } from "./actions"
 import { HeroBackground } from "./background"
 import { HeroContent } from "./content"
