@@ -1,11 +1,10 @@
 "use client"
 
-import { motion } from "framer-motion"
 import { Github, Linkedin, Twitter } from "lucide-react"
-import Link from "next/link"
 
 import { SOCIAL_LINKS } from "@/constants"
-import { ANALYTICS_EVENTS, trackClick } from "@/lib/analytics"
+import { ANALYTICS_EVENTS } from "@/lib/analytics/events"
+import { trackClick } from "@/lib/analytics/track"
 
 const { github, linkedin, twitter } = SOCIAL_LINKS
 
@@ -29,14 +28,12 @@ const socialLinks = [
 
 export const HeroSocials = () => {
 	return (
-		<motion.div
-			className="flex items-center gap-1 pt-8"
-			initial={{ opacity: 0, y: 30 }}
-			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.6, delay: 0.6 }}
+		<div
+			className="flex items-center gap-1 pt-8 animate-in"
+			style={{ animationDelay: "600ms" }}
 		>
 			{socialLinks.map((link) => (
-				<Link
+				<a
 					key={link.label}
 					href={link.href}
 					target="_blank"
@@ -48,8 +45,8 @@ export const HeroSocials = () => {
 					}
 				>
 					<link.icon className="w-5 h-5" />
-				</Link>
+				</a>
 			))}
-		</motion.div>
+		</div>
 	)
 }

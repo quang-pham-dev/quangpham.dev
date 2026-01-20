@@ -37,11 +37,10 @@ const nextConfig: NextConfig = {
 	experimental: {
 		// This will add the correct 'as' attribute to preloaded resources
 		optimizePackageImports: [
-			"@components",
+			"@/components",
 			"@radix-ui/react-slot",
 			"lucide-react",
 			"tailwindcss",
-			"framer-motion",
 		],
 		// Add these optimizations
 		serverActions: {
