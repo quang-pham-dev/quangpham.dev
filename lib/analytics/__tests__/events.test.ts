@@ -7,9 +7,6 @@ describe("ANALYTICS_EVENTS", () => {
 		expect(ANALYTICS_EVENTS.CLICK_DOWNLOAD_CV).toBe("click_download_cv")
 		expect(ANALYTICS_EVENTS.CLICK_CONTACT).toBe("click_contact")
 		expect(ANALYTICS_EVENTS.CLICK_SOCIAL).toBe("click_social")
-		expect(ANALYTICS_EVENTS.CLICK_NAV_ITEM).toBe("click_nav_item")
-		expect(ANALYTICS_EVENTS.TOGGLE_THEME).toBe("toggle_theme")
-		expect(ANALYTICS_EVENTS.CHANGE_LANGUAGE).toBe("change_language")
 	})
 
 	it("should be a readonly object", () => {

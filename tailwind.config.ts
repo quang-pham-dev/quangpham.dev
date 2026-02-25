@@ -16,18 +16,23 @@ export default {
 			},
 		},
 		extend: {
+			fontFamily: {
+				sans: ["var(--font-geist-sans)"],
+				mono: ["var(--font-geist-mono)"],
+				display: ["var(--font-syne)"],
+			},
 			fontSize: {
 				display: [
-					"4.5rem",
-					{ lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" },
+					"clamp(3rem, 15vw, 8rem)",
+					{ lineHeight: "0.95", letterSpacing: "-0.04em", fontWeight: "800" },
 				],
 				"display-sm": [
-					"3.5rem",
-					{ lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "700" },
+					"clamp(3rem, 6vw, 5rem)",
+					{ lineHeight: "1.0", letterSpacing: "-0.03em", fontWeight: "700" },
 				],
 				title: [
-					"2rem",
-					{ lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "600" },
+					"clamp(1.5rem, 4vw, 2.5rem)",
+					{ lineHeight: "1.1", letterSpacing: "-0.02em", fontWeight: "600" },
 				],
 			},
 			colors: {
@@ -64,13 +69,6 @@ export default {
 				border: "hsl(var(--border))",
 				input: "hsl(var(--input))",
 				ring: "hsl(var(--ring))",
-				chart: {
-					"1": "hsl(var(--chart-1))",
-					"2": "hsl(var(--chart-2))",
-					"3": "hsl(var(--chart-3))",
-					"4": "hsl(var(--chart-4))",
-					"5": "hsl(var(--chart-5))",
-				},
 			},
 			borderRadius: {
 				lg: "var(--radius)",
@@ -93,35 +91,10 @@ export default {
 						"background-position": "100% 0, 100% 100%, 0 100%, 100% 100%",
 					},
 				},
-				shine: {
-					"0%": { "background-position": "200% center" },
-					"100%": { "background-position": "-200% center" },
-				},
-				"border-rotate": {
-					"0%": { transform: "rotate(0deg)" },
-					"100%": { transform: "rotate(360deg)" },
-				},
-				"fade-in": {
-					"0%": { opacity: "0", transform: "translateY(16px)" },
-					"100%": { opacity: "1", transform: "translateY(0)" },
-				},
-				"fade-in-up": {
-					"0%": { opacity: "0", transform: "translateY(24px)" },
-					"100%": { opacity: "1", transform: "translateY(0)" },
-				},
-				"slide-in-right": {
-					"0%": { opacity: "0", transform: "translateX(-12px)" },
-					"100%": { opacity: "1", transform: "translateX(0)" },
-				},
 			},
 			animation: {
 				"rotate-gradient": "rotate-gradient 3s linear infinite",
 				"border-flow": "border-flow 3s infinite",
-				shine: "shine 3s linear infinite",
-				"border-rotate": "border-rotate 3s linear infinite",
-				"fade-in": "fade-in 0.6s ease-out forwards",
-				"fade-in-up": "fade-in-up 0.8s ease-out forwards",
-				"slide-in-right": "slide-in-right 0.5s ease-out forwards",
 			},
 		},
 	},

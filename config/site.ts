@@ -1,13 +1,11 @@
 import { SITE_URL } from "@/constants"
 
-export type SiteConfig = typeof siteConfig
-
 export const MY_NAME = "Quang Pham"
 export const siteConfig = {
 	author: {
 		name: MY_NAME,
 		label: "Software Engineer",
-		email: "quangpn.developer@gmail.com",
+		email: "quangpham.developer@gmail.com",
 		github: "https://github.com/quang-pham-dev",
 		twitter: "@quangpham_dev",
 		linkedin: "https://linkedin.com/in/quang-pham-dev",

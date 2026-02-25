@@ -12,13 +12,6 @@ export const ANALYTICS_EVENTS = {
 
 	// Social links
 	CLICK_SOCIAL: "click_social",
-
-	// Navigation
-	CLICK_NAV_ITEM: "click_nav_item",
-
-	// Theme/Language
-	TOGGLE_THEME: "toggle_theme",
-	CHANGE_LANGUAGE: "change_language",
 } as const
 
 export type AnalyticsEvent =

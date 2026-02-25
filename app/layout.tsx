@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Geist, Geist_Mono, Syne } from "next/font/google"
 import { NextIntlClientProvider } from "next-intl"
 import { getLocale, getMessages } from "next-intl/server"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -20,6 +20,13 @@ const geistMono = Geist_Mono({
 	variable: "--font-geist-mono",
 	subsets: ["latin"],
 	display: "swap",
+})
+
+const syne = Syne({
+	variable: "--font-syne",
+	subsets: ["latin"],
+	display: "swap",
+	weight: ["400", "500", "600", "700", "800"],
 })
 
 const { author, site } = siteConfig
@@ -117,7 +124,6 @@ export const metadata: Metadata = {
 			},
 		],
 	},
-
 	category: "technology",
 	other: {
 		"msapplication-TileColor": "#000000",
@@ -130,7 +136,6 @@ export default async function RootLayout({
 }: Readonly<{
 	children: React.ReactNode
 }>) {
-	// Get locale and messages for next-intl
 	const [locale, messages] = await Promise.all([
 		getLocale() as Promise<Locale>,
 		getMessages(),
@@ -139,7 +144,7 @@ export default async function RootLayout({
 	return (
 		<html lang={locale} suppressHydrationWarning>
 			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+				className={`${geistSans.variable} ${geistMono.variable} ${syne.variable} font-sans antialiased`}
 			>
 				<NextIntlClientProvider locale={locale} messages={messages}>
 					<ThemeProvider>
