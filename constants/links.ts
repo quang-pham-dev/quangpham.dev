@@ -2,7 +2,7 @@ export const SOCIAL_LINKS = {
 	github: "https://github.com/quang-pham-dev",
 	linkedin: "https://linkedin.com/in/quang-pham-dev",
 	twitter: "https://twitter.com/quangpham_dev",
-	email: "mailto:quangpn.developer@gmail.com",
+	email: "mailto:quangpham.developer@gmail.com",
 } as const
 
 export const RESUME_URL =

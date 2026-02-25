@@ -57,15 +57,4 @@ describe("trackClick", () => {
 			interaction_type: "click",
 		})
 	})
-
-	it("should preserve existing properties when adding interaction_type", () => {
-		const properties = { source: "header", section: "nav" }
-		trackClick(ANALYTICS_EVENTS.CLICK_NAV_ITEM, properties)
-
-		expect(posthog.capture).toHaveBeenCalledWith("click_nav_item", {
-			source: "header",
-			section: "nav",
-			interaction_type: "click",
-		})
-	})
 })

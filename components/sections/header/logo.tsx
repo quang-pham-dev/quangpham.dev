@@ -4,9 +4,9 @@ export const HeaderLogo = () => {
 	return (
 		<Link
 			href="/"
-			className="text-lg font-semibold tracking-tight hover:opacity-80 transition-opacity"
+			className="text-2xl font-display font-bold tracking-tighter hover:opacity-80 transition-opacity"
 		>
-			QP<span className="text-muted-foreground">.</span>
+			QP<span className="text-accent">.</span>
 		</Link>
 	)
 }

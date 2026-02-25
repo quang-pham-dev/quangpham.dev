@@ -8,8 +8,6 @@
 		"vitest.config.{js,mjs,ts,mts}",
 		"playwright.config.{js,ts}",
 		".storybook/main.{js,ts}",
-		"config/index.ts",
-		"e2e/index.ts",
 		"**/*.test.ts",
 		"**/*.test.tsx"
 	],
@@ -24,7 +22,7 @@
 		"test/**/*.{js,jsx,ts,tsx}",
 		"e2e/**/*.{js,jsx,ts,tsx}"
 	],
-	"ignore": ["**/*.d.ts", "hooks/use-feature-flag.ts"],
+	"ignore": ["**/*.d.ts"],
 	"ignoreDependencies": [
 		"@tailwindcss/typography",
 		"@storybook/nextjs",

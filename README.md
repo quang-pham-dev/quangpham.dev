@@ -87,7 +87,6 @@ This project uses **GitHub Actions** for continuous integration and delivery.
 - `bun check`: Run Biome lint & check
 - `bun check:fix`: Auto-fix Biome issues
 - `bun check:unused`: Find unused code with Knip
-- `bun lint`: (Legacy) ESLint script
 
 ### Testing
 - `bun test`: Run unit tests (Vitest)
