@@ -9,7 +9,7 @@
 		"url": "https://quangpham.dev"
 	},
 	"scripts": {
-		"dev": "next dev --turbopack",
+		"dev": "next dev --turbopack --port 4200",
 		"build": "cross-env ANALYZE=false next build",
 		"start": "next start",
 		"clean": "rm -rf .next && rm -rf node_modules && rm -rf lighthouse-reports",
@@ -64,6 +64,7 @@
 		"@tailwindcss/typography": "^0.5.16",
 		"@testing-library/jest-dom": "^6.6.4",
 		"@testing-library/react": "^16.3.0",
+		"@types/bun": "latest",
 		"@types/node": "^25",
 		"@types/react": "^19",
 		"@types/react-dom": "^19",
@@ -87,8 +88,7 @@
 		"typescript": "^5.8",
 		"vite": "^7.3.0",
 		"vite-tsconfig-paths": "^6.0.0",
-		"vitest": "^4.0.16",
-		"@types/bun": "latest"
+		"vitest": "^4.0.16"
 	},
 	"config": {
 		"commitizen": {

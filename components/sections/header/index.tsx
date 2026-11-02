@@ -36,7 +36,8 @@ export default function Header() {
 			className="fixed top-0 left-0 right-0 z-50 pt-6 px-6 lg:px-12 flex justify-center w-full"
 		>
 			<nav
-				className={`flex items-center justify-between w-full max-w-[1600px] transition-all duration-300 ${
+				aria-label="Primary navigation"
+				className={`flex items-center justify-between w-full max-w-[1600px] transition-[padding,background-color,border-radius,box-shadow] duration-300 ${
 					scrolled
 						? "py-3 px-6 rounded-full glass-panel shadow-sm bg-background/80"
 						: "py-2 bg-transparent"

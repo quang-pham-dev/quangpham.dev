@@ -1,6 +1,8 @@
 "use client"
 
 import { motion, type Variants } from "framer-motion"
+import { Fragment } from "react"
+import { SPRING, STAGGER } from "@/lib/motion/spring"
 
 interface TextRevealProps {
 	text: string
@@ -19,7 +21,10 @@ export function TextReveal({
 		hidden: { opacity: 0 },
 		visible: {
 			opacity: 1,
-			transition: { staggerChildren: 0.08, delayChildren: delay * 0.1 },
+			transition: {
+				staggerChildren: STAGGER.word,
+				delayChildren: delay * 0.1,
+			},
 		},
 	}
 
@@ -27,20 +32,11 @@ export function TextReveal({
 		visible: {
 			opacity: 1,
 			y: 0,
-			transition: {
-				type: "spring",
-				damping: 12,
-				stiffness: 100,
-			},
+			transition: SPRING.smooth,
 		},
 		hidden: {
 			opacity: 0,
-			y: 40,
-			transition: {
-				type: "spring",
-				damping: 12,
-				stiffness: 100,
-			},
+			y: 32,
 		},
 	}
 
@@ -51,11 +47,15 @@ export function TextReveal({
 			initial="hidden"
 			animate="visible"
 		>
-			{words.map((word) => (
+			{words.map((word, i) => (
 				<motion.span
+					// biome-ignore lint/suspicious/noArrayIndexKey: index needed for duplicate words
+					key={`${word}-${i}`}
 					variants={child}
-					style={{ marginRight: "0.25em" }}
-					key={word}
+					style={{
+						marginRight: "0.25em",
+						willChange: "transform, opacity",
+					}}
 					className="inline-block"
 				>
 					{word}
@@ -70,13 +70,16 @@ export function CharReveal({
 	className = "",
 	delay = 0,
 }: TextRevealProps) {
-	const chars = text.split("")
+	const words = text.split(" ")
 
 	const container: Variants = {
 		hidden: { opacity: 0 },
 		visible: {
 			opacity: 1,
-			transition: { staggerChildren: 0.04, delayChildren: delay * 0.1 },
+			transition: {
+				staggerChildren: STAGGER.char,
+				delayChildren: delay * 0.1,
+			},
 		},
 	}
 
@@ -85,21 +88,12 @@ export function CharReveal({
 			opacity: 1,
 			y: 0,
 			rotateX: 0,
-			transition: {
-				type: "spring",
-				damping: 12,
-				stiffness: 80,
-			},
+			transition: SPRING.heavy,
 		},
 		hidden: {
 			opacity: 0,
 			y: 60,
 			rotateX: -45,
-			transition: {
-				type: "spring",
-				damping: 12,
-				stiffness: 80,
-			},
 		},
 	}
 
@@ -111,15 +105,24 @@ export function CharReveal({
 			animate="visible"
 			style={{ perspective: "1000px" }}
 		>
-			{chars.map((char) => (
-				<motion.span
-					variants={child}
-					key={char}
-					className="inline-block transform-origin-bottom"
-					style={{ whiteSpace: char === " " ? "pre" : "normal" }}
-				>
-					{char}
-				</motion.span>
+			{words.map((word, wordIndex) => (
+				// biome-ignore lint/suspicious/noArrayIndexKey: index is needed for duplicate words
+				<Fragment key={`${word}-${wordIndex}`}>
+					<motion.span className="inline-block whitespace-nowrap">
+						{word.split("").map((char, charIndex) => (
+							<motion.span
+								// biome-ignore lint/suspicious/noArrayIndexKey: index needed for duplicate chars
+								key={`${char}-${charIndex}`}
+								variants={child}
+								className="inline-block transform-origin-bottom"
+								style={{ willChange: "transform, opacity" }}
+							>
+								{char}
+							</motion.span>
+						))}
+					</motion.span>
+					{wordIndex < words.length - 1 ? " " : null}
+				</Fragment>
 			))}
 		</motion.span>
 	)
