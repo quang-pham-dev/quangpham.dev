@@ -54,8 +54,6 @@
 		"@commitlint/cli": "^20.3.0",
 		"@commitlint/config-conventional": "^20.3.0",
 		"@next/bundle-analyzer": "^16.1.0",
-		"@parcel/watcher": "^2.6.0",
-		"@parcel/watcher-darwin-x64": "^2.6.0",
 		"@playwright/test": "^1.52.0",
 		"@storybook/addon-a11y": "^10.1.0",
 		"@storybook/addon-docs": "^10.1.0",
