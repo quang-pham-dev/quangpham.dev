@@ -6,14 +6,17 @@ import { HeroStatusBadge } from "./status-badge"
 
 export default function Hero() {
 	return (
-		<section className="relative min-h-[calc(100vh-80px)] flex flex-col justify-center overflow-hidden pt-20 pb-32">
+		<section
+			id="top"
+			className="relative flex min-h-[calc(100dvh-80px)] flex-col justify-center overflow-hidden py-20 scroll-mt-24 lg:py-24"
+		>
 			<HeroBackground />
 
-			<div className="relative z-10 w-full max-w-[1600px] mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-end h-full">
-				<div className="lg:col-span-8 space-y-12">
+			<div className="relative z-10 mx-auto grid h-full w-full max-w-[1600px] grid-cols-1 items-center gap-16 px-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(320px,0.8fr)] lg:gap-20 lg:px-12">
+				<div className="space-y-12">
 					<HeroContent />
 				</div>
-				<div className="lg:col-span-4 flex flex-col gap-10 items-start lg:items-end justify-end pb-8">
+				<div className="flex flex-col items-start gap-8 lg:items-end lg:justify-end">
 					<HeroStatusBadge />
 					<HeroActions />
 					<HeroSocials />

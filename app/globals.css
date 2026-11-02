@@ -5,6 +5,7 @@
 @layer base {
 	/* Light Theme */
 	:root {
+		color-scheme: light;
 		--background: 40 10% 98%; /* Warm off-white #F8F7F5 */
 		--foreground: 0 0% 5%; /* Almost black */
 
@@ -38,6 +39,7 @@
 
 	/* Dark Theme */
 	.dark {
+		color-scheme: dark;
 		--background: 0 0% 2%; /* Deep Black */
 		--foreground: 0 0% 96%; /* Crisp White */
 
@@ -75,6 +77,7 @@
 
 	html {
 		scroll-behavior: smooth;
+		scroll-padding-top: 6rem;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
@@ -82,10 +85,27 @@
 	body {
 		@apply bg-background text-foreground;
 		font-feature-settings: "ss01", "ss02", "cv01";
+		overflow-x: hidden;
+	}
+
+	:focus-visible {
+		outline: 2px solid hsl(var(--accent));
+		outline-offset: 4px;
 	}
 
 	::selection {
 		@apply bg-accent text-white;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		scroll-behavior: auto !important;
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
 	}
 }
 
@@ -105,10 +125,66 @@
 	.dark .text-edge-outline {
 	  -webkit-text-stroke: 1px hsl(var(--foreground) / 0.2);
 	}
+
+	/** Accent glow — subtle box-shadow using accent color.
+	 *  Apply to CTAs, badges, or active states for a premium halo effect. */
+	.accent-glow {
+		box-shadow:
+			0 0 0 1px hsl(var(--accent) / 0.15),
+			0 0 20px hsl(var(--accent) / 0.12),
+			0 0 60px hsl(var(--accent) / 0.06);
+	}
+	.dark .accent-glow {
+		box-shadow:
+			0 0 0 1px hsl(var(--accent) / 0.2),
+			0 0 24px hsl(var(--accent) / 0.18),
+			0 0 72px hsl(var(--accent) / 0.10);
+	}
+
+	/**
+	 * Grain overlay with film-grain texture as a pseudo-element.
+	 * Add `grain-overlay relative` to a container to activate it.
+	 */
+	.grain-overlay::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		z-index: 1;
+		background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+		background-repeat: repeat;
+		background-size: 200px 200px;
+		opacity: 0.025;
+		mix-blend-mode: overlay;
+	}
+	.dark .grain-overlay::before {
+		opacity: 0.04;
+	}
 }
 
 @layer utilities {
 	.text-balance {
 		text-wrap: balance;
+	}
+
+	/** Shimmer — use as background class for highlight/loading effects */
+	.shimmer {
+		background: linear-gradient(
+			90deg,
+			transparent 0%,
+			hsl(var(--accent) / 0.15) 50%,
+			transparent 100%
+		);
+		background-size: 200% 100%;
+		animation: shimmer 2.4s ease-in-out infinite;
+	}
+}
+
+@keyframes shimmer {
+	0% {
+		background-position: 200% center;
+	}
+	100% {
+		background-position: -200% center;
 	}
 }

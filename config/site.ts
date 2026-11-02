@@ -4,23 +4,24 @@ export const MY_NAME = "Quang Pham"
 export const siteConfig = {
 	author: {
 		name: MY_NAME,
-		label: "Software Engineer",
+		label: "Senior Software Engineer",
 		email: "quangpham.developer@gmail.com",
 		github: "https://github.com/quang-pham-dev",
 		twitter: "@quangpham_dev",
 		linkedin: "https://linkedin.com/in/quang-pham-dev",
 	},
 	site: {
-		title: `${MY_NAME} - Software Engineer`,
+		title: `${MY_NAME} - Senior Software Engineer`,
 		description:
-			"Software Engineer specializing in building exceptional digital experiences. Focused on creating innovative, user-centric solutions with modern web technologies.",
+			"Quang Pham is a senior software engineer and web platform leader building scalable products, high-performance systems, and engineering teams.",
 		url: SITE_URL.dev,
 		keywords: [
 			MY_NAME,
 			"quangpham.dev",
 			"quangpham",
 			"portfolio",
-			"software engineer",
+			"senior software engineer",
+			"web platform leader",
 			"web developer",
 			"full stack developer",
 			"react developer",
