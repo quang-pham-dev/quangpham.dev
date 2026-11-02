@@ -70,7 +70,8 @@ export function CharReveal({
 	className = "",
 	delay = 0,
 }: TextRevealProps) {
-	const words = text.split(" ")
+	const isSingleRun = !text.includes(" ")
+	const words = isSingleRun ? Array.from(text) : text.split(" ")
 
 	const container: Variants = {
 		hidden: { opacity: 0 },
@@ -121,7 +122,7 @@ export function CharReveal({
 							</motion.span>
 						))}
 					</motion.span>
-					{wordIndex < words.length - 1 ? " " : null}
+					{!isSingleRun && wordIndex < words.length - 1 ? " " : null}
 				</Fragment>
 			))}
 		</motion.span>
