@@ -108,6 +108,40 @@ test("RootPage presents readable global platform proof", async ({ page }) => {
 	expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.innerWidth)
 })
 
+test("RootPage replays the hero reveal after returning to English", async ({
+	page,
+}) => {
+	await page.goto(baseUrl as string)
+
+	const heroHeading = page.getByRole("heading", { level: 1 })
+	const languageToggle = page.getByRole("button", { name: "Toggle language" })
+
+	await expect(heroHeading).toBeVisible()
+	await languageToggle.click()
+	await expect(heroHeading).toContainText("スケールする")
+	await expect(heroHeading).toBeVisible()
+	await languageToggle.click()
+	await expect(heroHeading).toContainText(
+		"I build software systems that scale."
+	)
+	await expect(heroHeading).toBeVisible()
+})
+
+test("RootPage keeps the Japanese hero within the viewport", async ({
+	page,
+}) => {
+	await page.goto(baseUrl as string)
+
+	await page.getByRole("button", { name: "Toggle language" }).click()
+	await expect(page.locator("h1")).toContainText("スケールする")
+
+	const dimensions = await page.evaluate(() => ({
+		innerWidth: window.innerWidth,
+		scrollWidth: document.documentElement.scrollWidth,
+	}))
+	expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.innerWidth)
+})
+
 test("RootPage stacks the proof-led hero on mobile without overflow", async ({
 	page,
 }) => {
