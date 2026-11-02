@@ -20,7 +20,7 @@ export const HeaderThemeToggle = () => {
 		<button
 			type="button"
 			onClick={() => setTheme(isDark ? "light" : "dark")}
-			className="p-2.5 text-muted-foreground hover:text-foreground hover:bg-secondary rounded-full transition-all duration-200"
+			className="rounded-full p-2.5 text-muted-foreground transition-colors duration-200 hover:bg-secondary hover:text-foreground focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-background"
 			aria-label="Toggle theme"
 		>
 			{isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}

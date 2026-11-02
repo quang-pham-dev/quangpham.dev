@@ -18,7 +18,7 @@ export const HeaderLanguageToggle = () => {
 		<button
 			type="button"
 			onClick={toggleLanguage}
-			className="flex items-center gap-1.5 px-3 py-2 text-sm text-muted-foreground hover:text-foreground hover:bg-secondary rounded-full transition-all duration-200"
+			className="flex items-center gap-1.5 rounded-full px-3 py-2 text-sm text-muted-foreground transition-colors duration-200 hover:bg-secondary hover:text-foreground focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-background"
 			aria-label="Toggle language"
 		>
 			<Globe className="w-4 h-4" />

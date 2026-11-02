@@ -53,3 +53,7 @@ storybook-static
 
 # vitest
 vitest-report
+.agent
+.agents
+.claude
+skills-lock.json

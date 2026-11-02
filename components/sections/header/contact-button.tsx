@@ -15,7 +15,7 @@ export const HeaderContactButton = () => {
 			<a
 				href={SOCIAL_LINKS.email}
 				aria-label="Email me"
-				className="group flex items-center gap-2 px-5 py-2.5 text-sm font-bold tracking-wide uppercase rounded-full bg-foreground text-background hover:bg-accent hover:text-white transition-all duration-300"
+				className="group flex items-center gap-2 px-5 py-2.5 text-sm font-bold tracking-wide uppercase rounded-full bg-foreground text-background hover:bg-accent hover:text-white transition-colors duration-300 focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-4 focus-visible:ring-offset-background"
 				onClick={() => trackClick(ANALYTICS_EVENTS.CLICK_CONTACT)}
 			>
 				<Mail className="w-4 h-4 transition-transform group-hover:scale-110" />
